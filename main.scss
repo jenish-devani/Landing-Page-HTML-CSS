@@ -1,0 +1,253 @@
+html{
+    font-size: 62.5%;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins';
+}
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+
+    header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center; 
+        margin-top: 1em;
+        a{
+            margin-top: 1em;
+        }
+    }
+}
+
+nav{
+    margin-top: 1.5em;
+    ul{
+        list-style-type: none;
+        display: flex;
+        padding: 0;
+        gap: 4.1em;
+        li{
+            a{
+                text-decoration: none;
+                color: black;
+                text-transform: uppercase;
+                font-size: 1.5rem;
+                position: relative;
+                &:before{
+                    position: absolute;
+                    width: 0%;
+                    border-bottom: 2px solid rgb(152, 152, 152);
+                    content: "";
+                    height: 1px;
+                    bottom: -6px;
+                    transition: width .3s;
+                }
+                &:hover:before{
+                    width: 35%;
+                }
+                
+            }
+            a.active{
+                &:before{
+                    position: absolute;
+                    width: 35%;
+                    border-bottom: 2px solid black;
+                    content: "";
+                    height: 1px;
+                    bottom: -6px;
+                }
+            }
+            
+        }
+    }
+}
+
+main{
+    display: flex;
+    gap: 8em;
+    margin-top: 11em;
+    
+    .left-col{
+        width: 45%;
+        h1{
+            font-size: 5.2rem;
+            font-family: 'Playfair Display';
+            font-weight: normal;
+            margin: 0;
+        }
+        p{
+            font-size: 1.8rem;
+        }
+        .buttons {
+            display: flex;
+            gap: 2em;
+            padding: 5em 0em;
+
+            .primary-btn{
+                background-color: #f1e2d1;
+                font-weight: bold;
+                font-size: 1.6rem;
+                color: black;
+                padding: 1em 2em;
+                border-radius: 1.9em;
+                text-decoration: none;
+                transition: background-color 0.6s;
+                &:hover{
+                    background-color: #e2d1bd;
+                }
+
+            }
+            .secondary-btn{
+                font-size: 1.5rem;
+                text-decoration: none;
+                color: black;
+                padding: 1em 1em;
+                font-weight: normal;
+                display: block;
+               
+                &:hover{
+                    text-decoration: underline;
+                    svg{
+                        transform: translateX(10px);
+                    }
+                }
+                svg{
+                    width: 20px;
+                    transition: transform 0.3s;
+                }
+            }
+        }
+        .news{
+            display: flex;
+            gap: 3em;
+            padding: 2.5em;
+            border: 1px solid black;
+            border-radius: 0.9em;
+            position: relative;
+
+            &:before{
+                position: absolute;
+                content: "";
+                background: url('images/confetti.svg');
+                width: 100px;
+                height: 100px;
+                left: -35px;
+                top: -30px;
+                z-index: -1;
+            }
+
+            .employee{
+                font-size: 3.3rem;
+                font-weight: 300;
+                line-height: 100%;
+                margin: 0;
+            }
+
+            .details{
+                font-size: 1.4rem;
+                margin: 0;
+                
+            }
+        }
+    }
+
+    .right-col{
+
+        flex-grow: 1;
+        display: flex;
+        gap: 2.3em;
+
+        .card{
+            border-radius: 0.8em;
+            height: 100%;
+            display: flex;
+            align-items: end;
+          
+            &:hover{
+                .card-details{
+                    transform: translateY(-10px);
+                }
+            }
+        }
+
+        .card-details{
+            padding: 1em;
+            background-color: white;
+            width: 100%;
+            border-radius: 0.6em;
+            margin: 1em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: transform 800ms;
+           
+            .product-title{
+                justify-content: center;
+                text-decoration: none;
+                font-size: 1.6rem;
+                font-weight: bold;
+                color: black;
+            }
+            p{
+                font-size: 1.4rem;
+                margin: 0;
+            }
+            .product-price{
+                font-size: 2rem;
+            }
+        }
+
+        .col1{
+          width: 50%;
+
+          .card1{
+            background-image: url('/images/clothing1.jpg');
+            background-size: 150%;
+            position: relative;
+            transition: background-size 800ms;
+            &:before{
+                position: absolute;
+                content: "";
+                width: 100%;
+                height: 100%;
+                background: url('/images/tag.svg') no-repeat;
+                top: 10px;
+                left: -40px;
+                pointer-events: none;
+            }
+
+            &:hover{
+                background-size: 160%;
+            }
+          }
+          
+        }
+
+        .col2{
+            display: grid;
+            flex-grow: 1;
+            gap:2.3em;
+            
+            .card2{
+                background-image: url('/images/clothing2.jpg');
+                background-size: 150%;
+                transition: background-size 800ms;
+                &:hover{
+                    background-size: 160%;
+                }
+            }
+            .card3{
+                background-image: url('/images/clothing3.jpg');
+                background-size: 150%;
+                transition: background-size 800ms;
+                &:hover{
+                    background-size: 160%;
+                }
+            }
+        }
+    }
+}
+
